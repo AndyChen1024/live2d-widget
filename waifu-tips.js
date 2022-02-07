@@ -214,6 +214,8 @@ function loadWidget(config) {
 			if (!modelList) await loadModelList();
 			const target = randomSelection(modelList.models[modelId]);
 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
+			console.log(`Live2D 模型 `,`${cdnPath}model/${target}/index.json`);
+			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
 		} else {
 			loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
